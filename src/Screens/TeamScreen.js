@@ -1,16 +1,35 @@
-import React from 'react';
-import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { SafeAreaView, StyleSheet, Text, Alert, ScrollView } from 'react-native';
 import InfoCell from '../Components/InfoCell';
+import axios from 'axios';
 
 function TeamScreen(props) {
+
+    const [teamMembers, setTeamMembers] = useState([]);
+    const TEAM_MEMBERS_URL = 'https://jsonplaceholder.typicode.com/users';
+
+    const getMembers = async () => {
+        try {
+            const myTeam = await axios.get(TEAM_MEMBERS_URL)
+            setTeamMembers(myTeam.data);
+        } catch (err) {
+            Alert.alert(err);
+        }
+    }
+
+    useEffect(() => {
+        getMembers();
+    }, []);
+
     return (
         <SafeAreaView style={styles.container}>
             <Text style={styles.headerTitle}>My Team</Text>
             <Text style={styles.desc}>Here is the team and contact infomation. Select a team member to see more details.</Text>
-            <InfoCell />
-            <InfoCell />
-            <InfoCell />
-            <InfoCell />
+            <ScrollView>
+                {teamMembers.map(teamMember => (
+                    <InfoCell title={teamMember.name} email={teamMember.email} phone={teamMember.phone} />
+                ))}
+            </ScrollView>
         </SafeAreaView>
     );
 }

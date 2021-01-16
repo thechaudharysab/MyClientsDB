@@ -1,13 +1,13 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
 
-function InfoCell(props) {
+function InfoCell({ title, email, phone }) {
     return (
         <TouchableOpacity style={styles.cell}>
             <View style={styles.cellDetailView}>
-                <Text style={styles.cellTitle}>Leanne Graham</Text>
-                <Text style={styles.cellInfoText}>Sincere@april.biz</Text>
-                <Text style={styles.cellInfoText}>1-770-736-8031 x56442</Text>
+                <Text style={styles.cellTitle}>{title}</Text>
+                <Text style={styles.cellInfoText}>{email}</Text>
+                <Text style={styles.cellInfoText}>{phone}</Text>
             </View>
             <View style={styles.cellIconView}>
                 <Image source={require('../assets/icons/next.png')} style={styles.cellNextIcon} />
@@ -19,7 +19,9 @@ function InfoCell(props) {
 const styles = StyleSheet.create({
     cell: {
         padding: 15,
-        margin: 20,
+        marginLeft: 20,
+        marginRight: 20,
+        marginTop: 20,
         shadowColor: '#000',
         shadowOpacity: 0.20,
         shadowOffset: { width: 1, height: 1, },
