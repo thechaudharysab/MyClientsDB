@@ -8,17 +8,17 @@ function AddNewClientScreen(props) {
             <View style={styles.header}>
                 <Text style={styles.headerTitle}>Add New Client</Text>
                 <TouchableOpacity>
-                    <Text style={styles.headerButtton}>Add</Text>
+                    <Text style={styles.headerButtton}>Save</Text>
                 </TouchableOpacity>
                 {/* <Button title='Add' style={styles.headerButtton}  /> */}
             </View>
+
             <KeyboardAvoidingView
-                style={{ justifyContent: 'center', }} behavior="padding" enabled keyboardVerticalOffset={10}>
+                style={{ justifyContent: 'center', }} behavior="padding" enabled keyboardVerticalOffset={15}>
 
                 <ScrollView style={styles.form}>
                     <TextInput placeholder='Name' style={styles.textField}></TextInput>
                     <TextInput placeholder='Username' style={styles.textField}></TextInput>
-                    <TextInput placeholder='Email' style={styles.textField}></TextInput>
                     <TextInput placeholder='Email' style={styles.textField}></TextInput>
                     <TextInput placeholder='Street' style={styles.textField}></TextInput>
                     <TextInput placeholder='Suite' style={styles.textField}></TextInput>
@@ -32,7 +32,9 @@ function AddNewClientScreen(props) {
                     <TextInput placeholder='Catch Phrase' style={styles.textField}></TextInput>
                     <TextInput placeholder='Business Service' style={styles.textField}></TextInput>
                 </ScrollView>
+
             </KeyboardAvoidingView>
+
         </SafeAreaView>
     );
 }
@@ -43,42 +45,31 @@ const styles = StyleSheet.create({
     },
     header: {
         backgroundColor: '#fff',
-        height: 40,
-        flex: 0.5,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        //justifyContent: 'center',
-        // alignItems: 'center'
+        alignItems: 'center',
+        padding: 15
     },
     headerTitle: {
         fontSize: 25,
-        left: 10,
-        top: 5,
         fontWeight: '600',
-        // position: 'absolute',
-        //alignSelf: 'center'
-
     },
     headerButtton: {
-        right: 10,
-        top: 5,
         fontSize: 17,
         color: 'dodgerblue',
-        //alignSelf: 'center'
+        fontWeight: '700'
     },
     form: {
         backgroundColor: '#fff',
-        height: '90%',
+        padding: 15
     },
     textField: {
-        width: '90%',
-        height: 40,
-        left: 10,
+        height: 45,
         borderRadius: 5,
         borderWidth: 1,
         borderColor: '#9E9E9E',
+        marginBottom: 10,
         padding: 10,
-        margin: 10
     }
 })
 

@@ -26,9 +26,11 @@ function TeamScreen(props) {
             <Text style={styles.headerTitle}>My Team</Text>
             <Text style={styles.desc}>Here is the team and contact infomation. Select a team member to see more details.</Text>
             <ScrollView>
-                {teamMembers.map(teamMember => (
-                    <InfoCell title={teamMember.name} email={teamMember.email} phone={teamMember.phone} />
-                ))}
+                {
+                    teamMembers.map(teamMember => (
+                        <InfoCell title={teamMember.name} email={teamMember.email} phone={teamMember.phone} />
+                    ))
+                }
             </ScrollView>
         </SafeAreaView>
     );
@@ -48,7 +50,8 @@ const styles = StyleSheet.create({
     desc: {
         fontSize: 14,
         color: '#9E9E9E',
-        marginLeft: 25
+        marginLeft: 25,
+        marginRight: 25,
     },
 
 })
