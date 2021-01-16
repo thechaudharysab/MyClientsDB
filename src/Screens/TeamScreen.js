@@ -8,6 +8,9 @@ function TeamScreen(props) {
             <Text style={styles.headerTitle}>My Team</Text>
             <Text style={styles.desc}>Here is the team and contact infomation. Select a team member to see more details.</Text>
             <InfoCell />
+            <InfoCell />
+            <InfoCell />
+            <InfoCell />
         </SafeAreaView>
     );
 }
