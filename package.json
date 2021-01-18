@@ -10,9 +10,11 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-navigation/bottom-tabs": "^5.11.3",
     "axios": "^0.21.1",
     "react": "16.13.1",
-    "react-native": "0.63.4"
+    "react-native": "0.63.4",
+    "react-native-safe-area-context": "^3.1.9"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

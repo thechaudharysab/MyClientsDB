@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, SafeAreaView, ScrollView, Text, TextInput, View, StyleSheet, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
+import { SafeAreaView, ScrollView, Text, TextInput, View, StyleSheet, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
 
 function AddNewClientScreen(props) {
     return (
