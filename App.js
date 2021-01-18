@@ -3,6 +3,7 @@ import { StyleSheet, View, Image, Text } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import LoginScreen from './src/Screens/LoginScreen';
 import AddNewClientScreen from './src/Screens/AddNewClientScreen';
@@ -22,6 +23,7 @@ function ClientSrc() {
 }
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 function App(props) {
   return (
@@ -33,7 +35,7 @@ function App(props) {
       <Tab.Navigator
         tabBarOptions={{
           activeTintColor: 'black',
-          inactiveTintColor: 'black'
+          inactiveTintColor: 'black',
         }}>
         <Tab.Screen name="Team" component={TeamSrc} options={{
           title: 'My Team',
